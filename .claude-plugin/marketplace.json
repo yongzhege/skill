@@ -1,0 +1,22 @@
+{
+  "name": "cmux-skills",
+  "owner": {
+    "name": "YongZheGe",
+    "email": ""
+  },
+  "metadata": {
+    "description": "cmux terminal multiplexer skills for AI coding agents",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "cmux",
+      "description": "cmux terminal workspace manager - workspace management, browser automation, visual positioning, PVE GUI control",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/cmux"
+      ]
+    }
+  ]
+}

@@ -13,32 +13,38 @@
 
 ## 安装
 
-### 方式 1: 远程引用（推荐，跨设备同步）
+### 方式 1: Claude Code 插件（推荐）
+
+```bash
+/plugin install cmux@cmux-skills
+```
+
+### 方式 2: 远程引用（跨设备同步）
 
 在 `~/.claude/CLAUDE.md` 中加一行：
 
 ```markdown
-Fetch and follow instructions from: https://raw.githubusercontent.com/yongzhege/skill/main/skills/cmux.md
+Fetch and follow instructions from: https://raw.githubusercontent.com/yongzhege/skill/main/skills/cmux/SKILL.md
 ```
 
-### 方式 2: 本地安装
+### 方式 3: 跨工具安装
 
 ```bash
 git clone https://github.com/yongzhege/skill.git
 cd skill
-./install.sh claude      # 安装到 Claude Code
-./install.sh opencode    # 安装到 OpenCode
-./install.sh cursor      # 安装到 Cursor
-./install.sh copilot     # 安装到 GitHub Copilot
-./install.sh windsurf    # 安装到 Windsurf
-./install.sh codex       # 安装到 Codex / AGENTS.md
+./install.sh claude      # Claude Code
+./install.sh opencode    # OpenCode
+./install.sh cursor      # Cursor
+./install.sh copilot     # GitHub Copilot
+./install.sh windsurf    # Windsurf
+./install.sh codex       # Codex / AGENTS.md
 ./install.sh all         # 全部安装
 ```
 
-### 方式 3: 全局安装（当前设备所有项目生效）
+### 方式 4: 全局安装（当前设备所有项目生效）
 
 ```bash
-cp -r .claude/skills/cmux/ ~/.claude/skills/cmux/
+cp -r skills/cmux/ ~/.claude/skills/cmux/
 ```
 
 ## 支持的工具
@@ -46,24 +52,28 @@ cp -r .claude/skills/cmux/ ~/.claude/skills/cmux/
 | 工具 | 安装位置 | 格式 |
 |---|---|---|
 | Claude Code | `.claude/skills/cmux/SKILL.md` | YAML frontmatter |
-| OpenCode | `.opencode/cmux.md` | 纯 Markdown |
+| OpenCode | `.opencode/cmux.md` | Markdown |
 | Cursor | `.cursor/rules/cmux.mdc` | MDC frontmatter |
-| GitHub Copilot | `.github/copilot-instructions.md` | HTML marker 包裹 |
+| GitHub Copilot | `.github/copilot-instructions.md` | HTML marker |
 | Windsurf | `.windsurf/rules/cmux.md` | trigger/description frontmatter |
-| Codex | `AGENTS.md` | HTML marker 包裹 |
+| Codex | `AGENTS.md` | HTML marker |
 
 ## 文件结构
 
 ```
 .
+├── .claude-plugin/
+│   └── marketplace.json         # Claude Code 插件市场配置
 ├── skills/
-│   └── cmux.md                  # GitHub Pages 托管的 skill 文件
-├── .claude/skills/cmux/
-│   ├── SKILL.md                 # Claude Code skill 源文件
-│   └── scripts/
-│       └── spawn-workspace.sh   # 派生工作区辅助脚本
+│   └── cmux/
+│       ├── SKILL.md             # skill 主文件
+│       └── scripts/
+│           └── spawn-workspace.sh
+├── template/
+│   └── SKILL.md                 # 创建新 skill 的模板
 ├── install.sh                   # 跨工具安装器
-└── test-browser.html            # 浏览器自动化测试页
+├── test-browser.html            # 浏览器自动化测试页
+└── README.md
 ```
 
 ## 要求

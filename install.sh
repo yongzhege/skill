@@ -19,7 +19,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-SOURCE_SKILL="$SCRIPT_DIR/.claude/skills/cmux/SKILL.md"
+SOURCE_SKILL="$SCRIPT_DIR/skills/cmux/SKILL.md"
 PROJECT_DIR="$(pwd)"
 GLOBAL=false
 
