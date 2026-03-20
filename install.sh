@@ -48,8 +48,8 @@ install_claude() {
   local dest="$base/.claude/skills/cmux"
   mkdir -p "$dest/scripts"
   cp "$SOURCE_SKILL" "$dest/SKILL.md"
-  if [[ -f "$SCRIPT_DIR/.claude/skills/cmux/scripts/spawn-workspace.sh" ]]; then
-    cp "$SCRIPT_DIR/.claude/skills/cmux/scripts/spawn-workspace.sh" "$dest/scripts/"
+  if [[ -f "$SCRIPT_DIR/skills/cmux/scripts/spawn-workspace.sh" ]]; then
+    cp "$SCRIPT_DIR/skills/cmux/scripts/spawn-workspace.sh" "$dest/scripts/"
     chmod +x "$dest/scripts/spawn-workspace.sh"
   fi
   ok "Claude Code -> $dest/SKILL.md"
@@ -314,7 +314,7 @@ global_base_for() {
 main() {
   if [[ ! -f "$SOURCE_SKILL" ]]; then
     err "找不到源文件: $SOURCE_SKILL"
-    err "请确保 .claude/skills/cmux/SKILL.md 存在于脚本同级目录"
+    err "请确保 skills/cmux/SKILL.md 存在于脚本同级目录"
     exit 1
   fi
 
