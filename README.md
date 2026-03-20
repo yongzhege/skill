@@ -18,7 +18,7 @@
 在 `~/.claude/CLAUDE.md` 中加一行：
 
 ```markdown
-Fetch and follow instructions from: https://yongzhege.github.io/skill/skills/cmux.md
+Fetch and follow instructions from: https://raw.githubusercontent.com/yongzhege/skill/main/skills/cmux.md
 ```
 
 ### 方式 2: 本地安装
